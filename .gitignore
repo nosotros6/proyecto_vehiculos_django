@@ -3,5 +3,3 @@ migrations/
 __init__.py
 wsgi.py
 asgi.py
-settings.py
-requirements.txt
