@@ -1,6 +1,5 @@
 from django.db import models
 from pyexpat import model 
-from django.db import models
 
 # Create your models here.
 # Marca: Fiat, Chevrolet, Ford y Toyota # modelo

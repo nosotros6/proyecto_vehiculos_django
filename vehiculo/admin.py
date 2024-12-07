@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django.contrib import admin 
 from .models import VehiculoModel
 
-# Register your models here.
+# Registramos el modelo en el sitio administrativo de Django
 admin.site.register(VehiculoModel)

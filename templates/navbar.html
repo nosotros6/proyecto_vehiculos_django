@@ -1,11 +1,13 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load bootstrap5 %}
 
 {% block content %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Catálogos vehículos</a>
-        <button class="navbar-toggler" type="button" data-bs- toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria- controls="navbarToggleExternalContent" aria-expanded="false" aria- label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs- toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria- controls="navbarToggleExternalContent"
+            aria-expanded="false" aria- label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -19,8 +21,28 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Listar</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'registro' %}">Registro</a>
+                </li>
+            </ul>
+            <!-- LOGIN/LOGOUT -->
+            <ul class="navbar-nav mr-auto">
+                {% if user.is_authenticated %} 
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Salir</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hola, {{user.username}}</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
+        <!-- LOGIN/LOGOUT -->
+
     </div>
 </nav>
 {% endblock %}
